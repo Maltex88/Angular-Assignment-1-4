@@ -1,0 +1,21 @@
+<div class="main">
+
+<app-animal
+*ngFor="let animal of myAnimalList; let i = index"
+[animal]="animal"></app-animal>
+
+<form [formGroup]="addAnimalForm">
+  <div class="formControl">
+    <label>Animal Name</label><br>
+    <input type="text" placeholder="Enter Animal Name"
+    formControlName="animalNameControl"/>
+  </div>
+  <div class="formControl">
+    <label>Animal Color</label><br>
+    <input type="text" placeholder="Enter Animal Color"
+    formControlName="animalColorControl"/>
+  </div>
+
+</form>
+<button (click)="addAnimal()">Add Animal</button>
+</div>

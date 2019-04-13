@@ -1,0 +1,67 @@
+.trafikljustMain {
+  border: 2px solid black;
+  padding: 1em;
+}
+.trafikLjusModel {
+  background-color: black;
+  border: 1px solid black;
+  height: 100%;
+  width: 100px;
+
+}
+.redOff {
+  background-color: white;
+  margin-left: 1.3em;
+  margin-top: 0.4em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red {
+  background-color: red;
+  margin-left: 1.3em;
+  margin-top: 0.4em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.green {
+  background-color: green;
+  margin-left: 1.3em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.greenOff {
+  background-color: white;
+  margin-left: 1.3em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.yellow {
+  background-color: yellow;
+  margin-left: 1.3em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.yellowOff {
+  background-color: white;
+  margin-left: 1.3em;
+  height: 55px;
+  width: 55px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}

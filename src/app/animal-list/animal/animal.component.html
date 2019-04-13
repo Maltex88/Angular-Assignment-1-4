@@ -1,0 +1,9 @@
+
+
+ <div class="container"
+ [class.selected]="isSelected"
+ (click)="selectYourAnimal(i)">
+   <li>
+   {{animal.name}} {{animal.color}} <button (click)="removeAnimal(i)">X</button>
+   </li>
+</div>

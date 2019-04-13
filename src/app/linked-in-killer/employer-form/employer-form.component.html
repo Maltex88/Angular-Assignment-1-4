@@ -1,0 +1,54 @@
+
+<div class="formContainer">
+ <form [formGroup]="addEmployerFormGrp">
+
+    <div class="formControl">
+      <label>Company Name</label><br>
+      <input type="text" placeholder="Enter Name Of Company"
+      formControlName="companyNameControl"
+      [class.valid]="companyNameControl.valid && (companyNameControl.touched || companyNameControl.dirty)"
+      [class.invalid]="companyNameControl.invalid && (companyNameControl.touched || companyNameControl.dirty)"/>
+
+      <div class="errorMessage" *ngIf="companyNameControl.errors?.required && (companyNameControl.touched || companyNameControl.dirty)">
+        Please enter the name of company A-Z
+      </div>
+    </div>
+
+   <div class="formControl">
+      <label>Job Title</label><br>
+      <input type="text" placeholder="Enter Your Job Title"
+      formControlName="jobTitleControl"
+      [class.valid]="jobTitleControl.valid && (jobTitleControl.touched || jobTitleControl.dirty)"
+      [class.invalid]="jobTitleControl.invalid && (jobTitleControl.touched || jobTitleControl.dirty)"/>
+
+      <div class="errorMessage" *ngIf="jobTitleControl.invalid && (jobTitleControl.touched || jobTitleControl.dirty)">
+        Please enter your Job Title A-Z
+      </div>
+   </div>
+   <div class="formControl">
+      <label>Year of hire</label><br>
+      <input type="text" placeholder="yyyy"
+      formControlName="hireControl"
+      [class.valid]="hireControl.valid && (hireControl.touched || hireControl.dirty)"
+      [class.invalid]="hireControl.invalid && (hireControl.touched || hireControl.dirty)"/>
+
+      <div class="errorMessage" *ngIf="hireControl.invalid && (hireControl.touched || hireControl.dirty)">
+        Please enter your Year of hire
+        Numbers only etc 1995
+      </div>
+
+   </div>
+   <div class="formControl">
+      <label>Year of work ended</label><br>
+      <input type="text" placeholder="yyyy"
+      formControlName="workEndedControl"
+      [class.valid]="workEndedControl.valid && (workEndedControl.touched || workEndedControl.dirty)"
+      [class.invalid]="workEndedControl.invalid && (workEndedControl.touched || workEndedControl.dirty)"/>
+       <div class="errorMessage" *ngIf="workEndedControl.invalid && (workEndedControl.touched || workEndedControl.dirty)">
+        Please enter year of work ended
+        Numbers only etc 1995
+      </div>
+   </div>
+   </form>
+</div>
+<button (click)="addWorkToForm()" type="submit" [disabled]="addEmployerFormGrp.invalid">Add Workplace</button>

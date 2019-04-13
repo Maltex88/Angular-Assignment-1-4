@@ -1,0 +1,22 @@
+<div class="boka-resaMain">
+  <p>Vart vill du resa? </p><br>
+
+  <app-destination-button
+  *ngFor="let resa of resor"
+  [resa]="resa"
+  [selectedResa]="selectedResa"
+  [buttonSelected]="buttonSelected"
+  (click)="onSelect(resa)"
+  >
+  </app-destination-button>
+    <button type="button" name="button" (click)="unMark()">click me to unMark</button>
+
+  <app-destination-info
+  *ngIf="selectedResa"
+  (onAction)="handleAction($event)"
+  [resa]="resa"
+  [selectedResa]="selectedResa"
+  [buttonSelected]="buttonSelected"
+  >
+  </app-destination-info>
+</div>

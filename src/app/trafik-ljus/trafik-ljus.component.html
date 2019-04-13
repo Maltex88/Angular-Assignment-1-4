@@ -1,0 +1,20 @@
+<div class="trafikljustMain">
+  <div class="trafikLjusModel">
+    <div [ngClass]="{
+    'red': redLightsOn,
+    'redOff': !redLightsOn
+    }">
+    </div>
+    <div [ngClass]="{
+    'yellow': yellowLightsOn,
+    'yellowOff': !yellowLightsOn
+    }">
+    </div>
+    <div [ngClass]="{
+    'green': greenLightsOn,
+    'greenOff': !greenLightsOn
+    }">
+    </div>
+  </div>
+  <button (click)="lightSwitch()">Signal changer</button>
+</div>

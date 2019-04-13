@@ -1,0 +1,11 @@
+li {
+  list-style: none;
+  display: inline;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+.selected {
+  background-color: green;
+}

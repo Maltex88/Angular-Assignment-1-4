@@ -1,0 +1,16 @@
+<!-- <ul *ngFor="let skill of selectedSkills">
+  <li>{{skill}}</li>
+</ul> -->
+
+<ul >
+  <li
+  [class.selected]="isSelected"
+  (click)="selectYourSkills(i)">
+    <p>{{skill.skill}}&nbsp;&nbsp;{{skill.level}}</p>
+  </li>
+  <div *ngIf="isSelected">
+    <button (click)="selectSkill1('Beginner')" >Beginner</button>
+    <button (click)="selectSkill2('Intermediate')">Intermediate</button>
+    <button (click)="selectSkill3('Master')">Master</button>
+  </div>
+</ul>

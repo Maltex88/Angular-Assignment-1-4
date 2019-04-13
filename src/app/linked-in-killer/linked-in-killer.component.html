@@ -1,0 +1,108 @@
+
+ <div class="formContainer">
+  <form [formGroup]="LinkedInFormGrp">
+
+     <div class="formControl">
+	     <label>First Name</label><br>
+	     <input type="text" placeholder="Enter Your First Name"
+       formControlName="firstNameControl"
+       [class.valid]="firstNameControl.valid && (firstNameControl.touched || firstNameControl.dirty )"
+       [class.invalid]="firstNameControl.invalid && (firstNameControl.touched || firstNameControl.dirty)"/>
+
+       <div class="errorMessage" *ngIf="firstNameControl.invalid && (firstNameControl.touched || firstNameControl.dirty)">
+         Please enter your First Name <br>
+         Please use only letters A-Z
+       </div>
+       <div class="errorMessage" *ngIf="LinkedInFormGrp.errors?.profanity">
+         otillåtet ord
+       </div>
+
+     </div>
+
+    <div class="formControl">
+       <label>Last Name</label><br>
+       <input type="text" placeholder="Enter Your Last Name"
+       formControlName="lastNameControl"
+       [class.valid]="lastNameControl.valid && (lastNameControl.touched || lastNameControl.dirty)"
+       [class.invalid]="lastNameControl.invalid && (lastNameControl.touched || lastNameControl.dirty)"/>
+
+       <div class="errorMessage" *ngIf="lastNameControl.invalid && (lastNameControl.touched || lastNameControl.dirty)">
+         Please enter your Last Name <br>
+         Please use only letters A-Z
+       </div>
+    </div>
+    <div class="formControl">
+       <label>Location</label><br>
+       <input type="text" placeholder="Enter Your Town"
+       formControlName="locationControl"
+       [class.valid]="locationControl.valid && (locationControl.touched || locationControl.dirty)"
+       [class.invalid]="locationControl.invalid && (locationControl.touched || locationControl.dirty)"/>
+
+       <div class="errorMessage" *ngIf="locationControl.invalid && (locationControl.touched || locationControl.dirty)">
+         Please enter your Towns Name <br>
+         Please use only letters A-Z
+       </div>
+
+    </div>
+    <div class="formControl">
+       <label>Description</label><br>
+       <input type="text" placeholder="Personal Info"
+       formControlName="descriptionControl"
+       [class.valid]="descriptionControl.valid && (descriptionControl.touched || descriptionControl.dirty)"
+       [class.invalid]="descriptionControl.invalid && (descriptionControl.touched || descriptionControl.dirty)"/>
+        <div class="errorMessage" *ngIf="descriptionControl.invalid && (descriptionControl.touched || descriptionControl.dirty)">
+         Enter a short description about yourself, 20 characters A-Z only
+       </div>
+    </div>
+
+    <div class="formControl">
+       <label>Education Name</label><br>
+       <input type="text" placeholder="School/Other Attended"
+       formControlName="educationControl"
+       [class.valid]="educationControl.valid && (educationControl.touched || educationControl.dirty)"
+       [class.invalid]="educationControl.invalid && (educationControl.touched || educationControl.dirty)"/>
+        <div class="errorMessage" *ngIf="educationControl.invalid && (educationControl.touched || educationControl.dirty)">
+         Enter atleast 5 letters A-Z
+       </div>
+    </div>
+
+    <div class="formControl">
+       <label>Education Ended</label><br>
+       <input type="text" placeholder="yyyy"
+       formControlName="educationEndControl"
+       [class.valid]="educationEndControl.valid && (educationEndControl.touched || educationEndControl.dirty)"
+       [class.invalid]="educationEndControl.invalid && (educationEndControl.touched || educationEndControl.dirty)"/>
+        <div class="errorMessage" *ngIf="educationEndControl.invalid && (educationEndControl.touched || educationEndControl.dirty)">
+         Enter only 4 numbers, etc 1995.
+       </div>
+    </div>
+
+    <label>Show list of skills to select</label><br>
+    <button (click)="toggleSkills()">Show Skills</button>
+    <div class="formControl"   *ngIf="buttonToggle">
+       <br>
+       <div>
+         <app-skill-list
+         *ngFor="let skill of ListOfSkills"
+         [skill]="skill"></app-skill-list>
+       </div>
+    </div>
+
+    <div class="formControl">
+       <label>Add Previous Employer</label><br>
+       <div  *ngFor="let work of lister">
+         <div class="myJobs">
+             <p>{{work.WorkName}}</p>
+             <p>{{work.WorkTitle}}</p>
+             <p>{{work.WorkStart}}&nbsp;-&nbsp;{{work.WorkEnd}}</p>
+         </div>
+       </div>
+
+       <button (click)="toggleEmployerForm()">Add Employer</button>
+       <app-employer-form
+       *ngIf="toggleEmployerDiv">
+       </app-employer-form>
+    </div>
+  </form>
+  <button type="submit" [disabled]="LinkedInFormGrp.invalid">SUBMIT</button>
+ </div>

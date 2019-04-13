@@ -1,0 +1,26 @@
+/* ul {
+  border: 1px solid black;
+}
+li {
+color: White;
+Background-color: darkgreen;
+list-style: none;
+height: 2em;
+padding: 0.5em;
+
+
+}
+button {
+  padding: 0;
+} */
+/* .selected {
+  background-color: purple !important;
+} */
+.container {
+  border: 2px solid black;
+}
+.main {
+  border: 1px solid Black;
+  margin: 1em;
+  padding: 1em;
+}

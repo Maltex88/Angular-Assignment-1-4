@@ -1,0 +1,29 @@
+.instructions  {
+  margin-top: 2em;
+  border: 2px solid black;
+  display: inline-flex;
+}
+.instructionsBox {
+  border: 2px solid black;
+  padding: 2em;
+  height: 30%;
+}
+
+.selected {
+  background-color: green;
+}
+.valid {
+  border: 3px solid green;
+}
+.invalid {
+  border: 3px solid red;
+}
+.myJobs {
+  border: 2px solid black;
+  margin: 0.2em;
+  padding: 0.5em;
+}
+:disabled {
+  background-color: grey;
+  color: grey;
+}
